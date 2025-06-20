@@ -1,0 +1,78 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Asegura que el padding y border se incluyan en el ancho/alto total del elemento */
+}
+
+/* Remove default margin and padding */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dd,
+ol,
+ul,
+figure,
+figcaption,
+hr,
+fieldset,
+legend {
+  margin: 0; /* Elimina el margen predeterminado de los elementos */
+  padding: 0; /* Elimina el padding predeterminado de los elementos */
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
+  line-height: 1.5; /* Mejora la legibilidad del texto */
+  -webkit-font-smoothing: antialiased; /* Suaviza las fuentes en navegadores WebKit */
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none; /* Elimina los puntos/números predeterminados de las listas */
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto; /* Mejora la renderización del subrayado */
+}
+
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%; /* Asegura que las imágenes y otros medios sean responsivos */
+  display: block; /* Elimina el espacio extra debajo de las imágenes */
+}
+
+/* Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit; /* Los elementos de formulario heredan la fuente de su padre */
+}
+
+/* Remove all animations, transitions and scroll-behavior for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
