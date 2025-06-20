@@ -1,6 +1,6 @@
 import Container from "@/components/ui/Container";
 import ProductList from "./(home)/components/ProductList";
-import HomeCarrucel from "./(home)/page";
+import HomeCarrucel from "../../components/CarrucelHome";
 import { getProducts } from "../services/products";
 import ClientLandingModal from "@/components/LandingModal";
 
