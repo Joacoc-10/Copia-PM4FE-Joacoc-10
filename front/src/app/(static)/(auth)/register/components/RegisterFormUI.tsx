@@ -74,7 +74,7 @@ const RegisterForm = () => {
      try{
       const res = await postRegister(data);
       if(res.errors){
-        return toast.error("Error al intentar registrar el usuario");
+        return toast.error("El email ingresado ya esta registrado.");
       } toast.success ("El usuario se creo correctamente")
         setTimeout(() => {
           router.replace(Routes.login)
