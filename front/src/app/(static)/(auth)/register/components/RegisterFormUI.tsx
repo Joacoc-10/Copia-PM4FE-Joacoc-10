@@ -19,8 +19,21 @@ const SignupSchema = Yup.object().shape({
     .required("El correo electronico es requerido."),
   password: Yup.string()
     .min(8, "La contraseña debe de tener al menos 8 caracteres.")
-    .required("La contraseña es requerida."),
-  name: Yup.string().required("El nombre es requerido."),
+    .required("La contraseña es requerida.")
+    .matches(/[A-Z]/, 'La contraseña debe contener al menos una letra mayúscula.') 
+    .matches(/[0-9]/, 'La contraseña debe contener al menos un número.'),
+  name: Yup.string()
+    .required("El nombre es requerido.")
+    .matches(/^[A-Za-z\s]+$/, 'El nombre solo debe contener letras y espacios.') 
+    .test(
+      'has-two-words',
+      'Por favor, ingresa tu Nombre y Apellido.',
+      (value) => {
+        if (!value) return false; 
+        const words = value.trim().split(/\s+/);
+        return words.length >= 2;
+      }
+    ),
   address: Yup.string().required("La direccion es requerida."),
   confirmPassword: Yup.string()
     .oneOf([Yup.ref("password"), ""], "La contraseña no coincide.")
@@ -103,7 +116,7 @@ const RegisterForm = () => {
               onBlur={handleBlur}
               value={values.name}
               classNameContainer="mb-8 w-full"
-              inputClassName="bg-light_blue-300"
+              inputClassName="bg-light_blue-300 py-2 px-4"
               labelClassName="text-lg font-extrabold text-secondary_yellow-500"
             />
             {errors.name && touched.name && <FormErrorMsg msg={errors.name} />}
@@ -116,7 +129,7 @@ const RegisterForm = () => {
               onBlur={handleBlur}
               value={values.email}
               classNameContainer="mb-8 w-full"
-              inputClassName="bg-light_blue-300"
+              inputClassName="bg-light_blue-300 py-2 px-4"
               labelClassName="text-lg font-extrabold text-secondary_yellow-500"
             />
             {errors.email && touched.email && (
@@ -133,7 +146,7 @@ const RegisterForm = () => {
               onBlur={handleBlur}
               value={values.phone}
               classNameContainer="mb-8 w-full"
-              inputClassName="bg-light_blue-300"
+              inputClassName="bg-light_blue-300 py-2 px-4"
               labelClassName="text-lg font-extrabold text-secondary_yellow-500"
             />
             {errors.phone && touched.phone && (
@@ -148,7 +161,7 @@ const RegisterForm = () => {
               onBlur={handleBlur}
               value={values.address}
               classNameContainer="mb-8 w-full"
-              inputClassName="bg-light_blue-300"
+              inputClassName="bg-light_blue-300 py-2 px-4"
               labelClassName="text-lg font-extrabold text-secondary_yellow-500"
             />
             {errors.address && touched.address && (
@@ -165,7 +178,7 @@ const RegisterForm = () => {
               onBlur={handleBlur}
               value={values.password}
               classNameContainer="mb-8 w-full"
-              inputClassName="bg-light_blue-300"
+              inputClassName="bg-light_blue-300 py-2 px-4"
               labelClassName="text-lg font-extrabold text-secondary_yellow-500"
             />
             {errors.password && touched.password && (
@@ -183,7 +196,7 @@ const RegisterForm = () => {
               onBlur={handleBlur}
               value={values.confirmPassword}
               classNameContainer="mb-8 w-full"
-              inputClassName="bg-light_blue-300"
+              inputClassName="bg-light_blue-300 py-2 px-4"
               labelClassName="text-lg font-extrabold text-secondary_yellow-500"
             />
             {errors.confirmPassword && touched.confirmPassword && (
