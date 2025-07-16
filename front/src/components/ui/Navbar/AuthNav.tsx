@@ -43,8 +43,7 @@ const AuthNav = () => {
           </span>
         </Link>
         <button onClick={logout} className="text-xl text-secondary_yellow-500">
-          {" "}
-          <FiLogOut />{" "}
+          <FiLogOut />
         </button>
       </div>
     );
