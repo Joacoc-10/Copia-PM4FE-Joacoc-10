@@ -53,7 +53,7 @@ const OrdersUser = () => {
               </p>
               <p className="mb-1 text-base font-semibold text-accent_blue-500">
                 Productos:
-              </p>
+              </p> 
               <ul className="pl-4 space-y-1 list-disc list-inside text-primary_blue-400">
                 {order.products.map((product) => (
                   <li key={product.id}>

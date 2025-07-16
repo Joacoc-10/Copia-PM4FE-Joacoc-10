@@ -15,8 +15,8 @@ export const NavbarLinks: NavbarItemProps[] = [
     href: Routes.cart,
   },
   {
-  label: "Perfil",
-  href: Routes.profile,
+    label: "Perfil",
+    href: Routes.profile,
   },
   {
     label: "Contacto",

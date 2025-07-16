@@ -13,6 +13,7 @@ const ProductCard: FC<Partial<IProduct>> = (product) => {
     image,
     id,
   } = product;
+  
   const generateUrl = (id: string | number) => {
     return `${Routes.product_detail}/${id}/${name
       ?.toLowerCase()

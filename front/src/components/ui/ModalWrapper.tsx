@@ -24,7 +24,7 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
         onClick={onClose} 
       ></div>
 
-      <div className="relative z-10 w-full max-w-5xl overflow-hidden rounded-2xl shadow-3xl">
+      <div className="relative z-10 w-full max-w-5xl rounded-2xl shadow-3xl overflow-hidden max-h-[95vh]">
         <button
           onClick={onClose}
           className="absolute z-20 text-4xl font-bold text-white transition-transform duration-200 right-4 top-4 hover:scale-110"

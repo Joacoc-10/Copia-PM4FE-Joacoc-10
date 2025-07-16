@@ -11,12 +11,7 @@ const RenderProducts = () => {
   const { cart, removeFromCart,priceTotal } = useCartContext();
   const showCartItems = cart && cart.length > 0;
 
-  // const calculateTotal = (items: Partial<IProduct>[]) => {
-  //   return items.reduce(
-  //     (total: number, item: Partial<IProduct>) => total + (item.price || 0),
-  //     0
-  //   );
-  // };
+
 
   const onDelete = (crrP: Partial<IProduct>) => {
     if (crrP.id) {

@@ -9,5 +9,5 @@ export const Routes = {
   cart: "/cart",
   landing: "/landing",
   not_found: "/not-found",
-  products: "/products"
+  products: "/products",
 };

@@ -4,10 +4,6 @@ import CreateOrderBtn from "./components/CreateOrderBtn";
 import RenderProducts from "./components/RenderProducts";
 
 const CartPage = () => {
-
-
-
-
   return (
     <>
       <Container>
@@ -20,22 +16,18 @@ const CartPage = () => {
             <h2 className="mb-6 text-2xl font-bold md:text-3xl text-primary_blue-500">
               Productos en tu Carrito:
             </h2>
-           <RenderProducts/>
+            <RenderProducts />
           </div>
-          
+
           <div className="p-6 border rounded-lg shadow-inner bg-secondary_yellow-400 border-primary_blue-200">
             <h2 className="mb-6 text-2xl font-bold border-b-2 border-primary_blue-100 md:text-3xl text-light_black-500">
               Resumen de orden
             </h2>
-            {/* <p className="mt-10 mb-4 text-2xl font-semibold text-center md:text-3xl text-primary_blue-800 md:text-center"> */}
-              {/* Total: */}
-              <div id="total-container"/>
-              {/* <p className="font-extrabold text-accent_blue-500">
-                ${calculateTotal(cart).toFixed(2)}
-              </p> */}
-            {/* </p> */}
+
+            <div id="total-container"/>
+
             <div className="flex justify-end">
-             <CreateOrderBtn/>
+              <CreateOrderBtn />
             </div>
           </div>
         </div>

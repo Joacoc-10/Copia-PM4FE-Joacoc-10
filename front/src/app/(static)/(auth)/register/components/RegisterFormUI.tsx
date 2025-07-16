@@ -12,8 +12,9 @@ import { Routes } from "@/routes";
 import { useRouter } from "next/navigation";
 import usePublic from "@/hooks/usePublic";
 import { AxiosError } from "axios";
+import Link from "next/link";
 
-const SignupSchema = Yup.object().shape({
+const RegisterSchema = Yup.object().shape({
   email: Yup.string()
     .email("Email invalido")
     .required("El correo electronico es requerido."),
@@ -67,7 +68,7 @@ const RegisterForm = () => {
       phone: "",
       confirmPassword: "",
     }}
-    validationSchema={SignupSchema}
+    validationSchema={RegisterSchema}
     onSubmit={ async (values) => {
       const {  ...data } = values;
       
@@ -86,7 +87,7 @@ const RegisterForm = () => {
         toast.error(`Error al registrar: ${serverMessage}`);
       } 
      } finally {
-      console.log("Usuario registrad correctamente:", data);
+      console.log("Usuario registrado correctamente:", data);
       
      }
       
@@ -204,6 +205,7 @@ const RegisterForm = () => {
             )}
           </div>
         </div>
+        <div>
         <Button
           variant="default"
           type="submit"
@@ -211,6 +213,17 @@ const RegisterForm = () => {
           disabled={isSubmitting}
           className="w-full mt-auto text-lg font-extrabold hover:bg-accent_blue-600"
         ></Button>
+        </div>
+       
+        <div className="flex justify-center mt-6">
+          <Link
+            href={Routes.login}
+            className="text-primary_blue-400 hover:text-secondary_yellow-500"
+            >
+            ¿Ya tienes cuenta? Inicia sesión!
+            </Link>
+        </div>
+        
       </form>
     )}
   </Formik>
