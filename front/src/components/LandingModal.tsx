@@ -20,7 +20,7 @@ const ClientLandingModal: React.FC = () => {
 
   const handleCloseModal = () => {
     setShowLandingModal(false);
-  };
+  }
 
   return (
     <ModalWrapper isOpen={showLandingModal} onClose={handleCloseModal}>
