@@ -1,18 +1,27 @@
 "use client";
+import Loader from "@/components/ui/Loader/Loader";
 import { useAuthContext } from "@/context/authContext";
 import usePrivate from "@/hooks/usePrivate";
 import { Routes } from "@/routes";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
 
 const DataUser = () => {
   usePrivate();
   const { user } = useAuthContext();
   const router = useRouter();
 
+   useEffect(() => {
+    if (!user) {
+      router.push(Routes.home);
+    }
+  }, [user, router]); 
+
+
   if (!user) {
-    router.push(Routes.home);
-    return null;
+    return (
+     <Loader/>
+    );
   }
 
   return (
