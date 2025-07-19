@@ -1,31 +1,32 @@
-import Container from "@/components/ui/Container";
-import ProductList from "./(home)/components/ProductList";
-import HomeCarrucel from "@/components/CarrucelHome";
-import { getProducts } from "../services/products";
-import ClientLandingModal from "@/components/LandingModal";
+// import Container from "@/components/ui/Container";
+// import ProductList from "./(home)/components/ProductList";
+// import HomeCarrucel from "@/components/CarrucelHome";
+// import { getProducts } from "../services/products";
+// import ClientLandingModal from "@/components/LandingModal";
 
 
-const getData = async () => {
-  const products = await getProducts();
-  return {
-    products,
-  };
-};
+// const getData = async () => {
+//   const products = await getProducts();
+//   return {
+//     products,
+//   };
+// };
 
 export default async function Home() {
-  const { products } = await getData();
+  // const { products } = await getData();
 
   return (
-    <>
-      <ClientLandingModal/>
-      <HomeCarrucel />
+     <>
+      {/* Comenta todos los componentes que renderizas */}
+      {/* <ClientLandingModal/> */}
+      {/* <HomeCarrucel /> */}
       <div>
-        <Container>
+        {/* <Container> */}
           <h2 className="text-[2em] font-bold my-4 text-light_black-500">
-            Productos Destacados
+            ¡Página de Inicio de Prueba!
           </h2>
-          <ProductList products={products || []} />
-        </Container>
+          {/* <ProductList products={products || []} /> */}
+        {/* </Container> */}
       </div>
     </>
   );
