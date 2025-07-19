@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-// import "../styles/reset.css";
-// import "../styles/globals.css";
+import "../styles/reset.css";
+import "../styles/globals.css";
 import { Bounce, ToastContainer } from "react-toastify";
 import { AuthProvider } from "@/context/authContext";
 import { CartProvider } from "@/context/cartContext";
