@@ -29,11 +29,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      {/* <head>
         <link rel="apple-touch-icon" sizes="180x180" href="../public/Frame.png"/>
         <link rel="icon" type="image/png" sizes="32x32" href="../public/Frame.png"/>
         <link rel="icon" type="image/png" sizes="16x16" href="../public/Frame.png"/>
-      </head>
+      </head> */}
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <AuthProvider>
           <CartProvider>
